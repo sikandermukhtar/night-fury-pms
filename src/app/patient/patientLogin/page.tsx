@@ -1,10 +1,10 @@
+"use client";
+
 import {Label} from "@/components/ui/label";
 import {Input} from "@/components/ui/input";
-
 import Link from "next/link";
 
-export default async function LoginPage(){
-
+export default function LoginPage(){
 
 
     return (
@@ -39,7 +39,7 @@ export default async function LoginPage(){
 
                 <p
                     className='text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300'
-                >Do not have an account? <Link href='/registerPatient'
+                >Do not have an account? <Link href='/patient/registerPatient'
                                                className='hover:underline underline-offset-2'>Register</Link></p>
                 <div
                     className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-4 h-[1px] w-full'>

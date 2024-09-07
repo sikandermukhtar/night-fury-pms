@@ -68,7 +68,7 @@ export default async function Register(){
 
                 </form>
                 <p className="text-neutral-600 text-sm max-w-sm dark:text-neutral-300">
-                    Already have an account? <Link href="/patientLogin" className='hover:underline'>Login</Link>
+                    Already have an account? <Link href="/patient/patientLogin" className='hover:underline'>Login</Link>
                 </p>
             </div>
         </div>
