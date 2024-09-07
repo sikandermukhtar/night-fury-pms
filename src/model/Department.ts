@@ -1,4 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
+import { string } from "zod";
 
 export interface Department extends Document {
     departmentName: string;
@@ -12,9 +13,7 @@ const DepartmentSchema: Schema<Department> = new Schema({
         required: true,
     },
     doctorId: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Doctor', // Assuming you have a Doctor model
-        required: true,
+        type: String
     }],
     daysOpened: {
         type: String,
