@@ -3,21 +3,20 @@ import {Admin} from "@/model/Admin";
 import {NextResponse, NextRequest } from 'next/server'
 import jwt from "jsonwebtoken"
 
-connect();
 
 
-export async function POST(request: NextRequest){
+export async function POST(request:  Request){
     try {
+        await connect();
 
         const reqBody =await request.json()
         const {email, password} = reqBody
-
-        const admin = await Admin.findOne({email})
         console.log(email, password)
+        const admin = await Admin.findOne({ email });
+
         if(!admin){
             return NextResponse.json({message:"User not found", success:false, status: 400})
         }
-        console.log(admin)
 
 
         if(password !== admin.password){
