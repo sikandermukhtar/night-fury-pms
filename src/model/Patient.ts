@@ -51,6 +51,6 @@ const PatientSchema: Schema<Patient> = new Schema({
    
 });
 
-export const PatientModel = mongoose.model<Patient>('Patient', PatientSchema) ||
-mongoose.models.Patient as mongoose.Model<Patient>;
- 
+const PatientModel = mongoose.models.Patient || mongoose.model('Patient', PatientSchema);
+
+export {PatientModel};
