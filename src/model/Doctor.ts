@@ -16,6 +16,7 @@ export interface Doctor extends Document {
     roomNumber: string;
     rank: string;
     isVerified:boolean;
+    rejected:boolean;
 }
 
 // Define the Doctor schema
@@ -69,6 +70,10 @@ const DoctorSchema: Schema<Doctor> = new Schema({
         type: String,
     },
     isVerified:{
+        type: Boolean,
+        default: false
+    },
+    rejected:{
         type: Boolean,
         default: false
     }
