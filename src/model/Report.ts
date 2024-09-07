@@ -1,6 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-
 export interface Report extends Document {
     patientId: string;
     doctorId: string;
@@ -11,14 +10,13 @@ export interface Report extends Document {
 
 const ReportSchema: Schema<Report> = new Schema({
     patientId: {
-      type:String,
-      required: true,
+        type: String,
+        required: true,
     },
     doctorId: {
-        type:String,
+        type: String,
         required: true,
-      },
-     
+    },
     date: {
         type: Date,
         required: true,
@@ -33,8 +31,5 @@ const ReportSchema: Schema<Report> = new Schema({
     }
 });
 
-
-
-export const ReportModel = mongoose.model<Report>('Report', ReportSchema)
-||
-mongoose.models.Report as mongoose.Model<Report>;
+// Check if the model exists in mongoose.models before defining it
+export const ReportModel = mongoose.models.Report || mongoose.model<Report>('Report', ReportSchema);
