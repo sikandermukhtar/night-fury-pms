@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 export default function Home() {
   return(
   <>
-    <Header />
 
       <div className='min-h-screen bg-gradient-to-b from-purple-50 via-orange-50 to-transparent'>
           <Header/>
