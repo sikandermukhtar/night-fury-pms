@@ -73,6 +73,5 @@ const DoctorSchema: Schema<Doctor> = new Schema({
 });
 
 // Export the Doctor model
-const DoctorModel = mongoose.models.Doctor || mongoose.model<Doctor>('Doctor', DoctorSchema);
-
-export { DoctorModel };
+export const DoctorModel = mongoose.model<Doctor>('Doctor', DoctorSchema) ||
+    mongoose.models.Doctor as mongoose.Model<Doctor>;

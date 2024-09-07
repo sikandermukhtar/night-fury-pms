@@ -1,14 +1,13 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-export interface Report extends Document {
+export interface Appointment extends Document {
     patientId: string;
     doctorId: string;
     date: Date;
-    symptoms: string;
-    diagnosis: string;
+    time: string;
 }
 
-const ReportSchema: Schema<Report> = new Schema({
+const AppointmentSchema: Schema<Appointment> = new Schema({
     patientId: {
         type: String,
         required: true,
@@ -21,15 +20,11 @@ const ReportSchema: Schema<Report> = new Schema({
         type: Date,
         required: true,
     },
-    symptoms: {
-        type: String,
-        required: true,
-    },
-    diagnosis: {
+    time: {
         type: String,
         required: true,
     }
 });
 
 // Check if the model exists in mongoose.models before defining it
-export const ReportModel = mongoose.models.Report || mongoose.model<Report>('Report', ReportSchema);
+export const AppointmentModel = mongoose.models.Appointment || mongoose.model<Appointment>('Appointment', AppointmentSchema);
