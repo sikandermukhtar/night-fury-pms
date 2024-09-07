@@ -32,7 +32,7 @@ export default function LoginPage() {
         <div className='mt-52 max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white
         md:border md:border-[#121212] dark:bg-white'>
             <h2 className='font-bold text-2xl'>Welcome to Fury PMS</h2>
-            <p className='font-medium text-lg mt-2'>Patient Login</p>
+            <p className='font-medium text-lg mt-2'>Doctor Login</p>
             <form className='mt-6 flex flex-col gap-3' onSubmit={handleSubmit}>
                 <div className='flex flex-col gap-3'>
                     <Label htmlFor="email">Email Address</Label>

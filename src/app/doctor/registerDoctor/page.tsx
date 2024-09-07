@@ -39,7 +39,7 @@ export default function Register() {
                 <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
                     Welcome to Fury PMS
                 </h2>
-                <h3 className='text-lg font-medium'>Patient Registration</h3>
+                <h3 className='text-lg font-medium'>Doctor Registration</h3>
                 <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
                     Please provide all the necessary information
                 </p>
