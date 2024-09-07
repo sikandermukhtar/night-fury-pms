@@ -50,7 +50,7 @@ const createTimeIntervals = (startTime: string, endTime: string) => {
   const times: string[] = [];
   const start = convertTo24Hour(startTime);
   const end = convertTo24Hour(endTime);
-
+    
   const startDate = new Date(1970, 0, 1, start.hours, start.minutes);
   const endDate = new Date(1970, 0, 1, end.hours, end.minutes);
 
