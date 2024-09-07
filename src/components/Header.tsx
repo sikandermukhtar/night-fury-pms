@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="w-full h-screen bg-[#f0f5f7]">
+    <div className="w-full bg-[#f0f5f7]">
         <div className="frame-root">
       <div className="frame-content">
         <header className="text-[#f0f5f7] body-font bg-[#01224F]">
@@ -22,11 +22,11 @@ const Header = () => {
             </a>
             <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
               <a className="mr-5 hover:text-[#98daf8] hover:underline" href="#">Home</a>
-              <a className="mr-5 hover:text-[#98daf8] hover:underline" href="#">Second Link</a>
-              <a className="mr-5 hover:text-[#98daf8] hover:underline" href="#">Third Link</a>
-              <a className="mr-5 hover:text-[#98daf8] hover:underline" href="#">Fourth Link</a>
+              <a className="mr-5 hover:text-[#98daf8] hover:underline" href="#">About</a>
+              <a className="mr-5 hover:text-[#98daf8] hover:underline" href="#">Contact Us</a>
+              <a className="mr-5 hover:text-[#98daf8] hover:underline" href="/doctor/doctorLogin">Doctor</a>
             </nav>
-            <button
+            <a href="/patient/patientLogin"
   className="font-sans flex justify-center gap-2 items-center mx-2 shadow-xl text-lg text-[#00529a] bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#0094d4] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
   type="submit"
 >
@@ -41,7 +41,7 @@ const Header = () => {
       d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
     ></path>
   </svg>
-</button>
+</a>
 
           </div>
         </header>
