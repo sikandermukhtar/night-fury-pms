@@ -1,9 +1,11 @@
-import Appointments from "@/components/Appointments";
+
 import Header from "@/components/Header";
-import Image from "next/image";
 
 export default function Home() {
-  return (
+  return(
+  <>
+    <Header />
+
       <div className='min-h-screen bg-gradient-to-b from-purple-50 via-orange-50 to-transparent'>
           <Header/>
           <div id="hero-container"
@@ -47,5 +49,6 @@ export default function Home() {
 
           </div>
       </div>
+    </>
   );
 }
