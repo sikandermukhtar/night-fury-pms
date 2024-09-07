@@ -32,10 +32,11 @@ export async function POST(request: Request) {
         });
     
         // Set the cookie with a value of 10
-        response.cookies.set('email', Doctor.email, {
+        response.cookies.set('doctorInfo', JSON.stringify(doctors), {
             httpOnly: true, // The cookie will be accessible only by the web server
+            secure: process.env.NODE_ENV === 'production', // Only sent over HTTPS in production
             maxAge: 60 * 60 * 24 * 7, // Cookie expiration time (e.g., 7 days)
-            path: '', // Path where the cookie is valid
+            path: '/', // Path where the cookie is valid (root path for the entire domain)
         });
         return response;
 

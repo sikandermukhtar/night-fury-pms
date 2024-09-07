@@ -14,27 +14,28 @@ export async function POST(request: Request) {
         const {email, password } = Admin;
 
 
-        let admin=await Admin.findOne({email});
-        if(!admin){
-            return new Response(JSON.stringify({ error: "User not found" }), { status: 404, headers: { 'Content-Type': 'application/json' } });
-        } 
+        // let admin=await Admin.findOne({email});
+        // if(!admin){
+        //     return new Response(JSON.stringify({ error: "User not found" }), { status: 404, headers: { 'Content-Type': 'application/json' } });
+        // } 
 
-        const isMatch = await bcrypt.compare(password, admin.password);
-        if (!isMatch) {
-            return new Response(JSON.stringify({ error: "Invalid password" }), { status: 401, headers: { 'Content-Type': 'application/json' } });
-        }
+      
+        // if (password!=admin.password) {
+        //     return new Response(JSON.stringify({ error: "Invalid password" }), { status: 401, headers: { 'Content-Type': 'application/json' } });
+        // }
 
         
         const response = NextResponse.json({
             success: true,
             message: "Login Successfully"
         });
-    
+     
         // Set the cookie with a value of 10
-        response.cookies.set('email', admin.email, {
+        response.cookies.set('adminInfo', JSON.stringify(Admin), {
             httpOnly: true, // The cookie will be accessible only by the web server
+            secure: process.env.NODE_ENV === 'production', // Only sent over HTTPS in production
             maxAge: 60 * 60 * 24 * 7, // Cookie expiration time (e.g., 7 days)
-            path: '', // Path where the cookie is valid
+            path: '/', // Path where the cookie is valid (root path for the entire domain)
         });
         return response;
 
