@@ -9,10 +9,11 @@ export interface Patient extends Document {
     bloodGroup: string;
     gender: string;
     dob: Date;
-    isVerified:boolean;
-    verifyToken:string;
-    verifyExpiry:Date;
+   
 }
+
+
+
 
 const PatientSchema: Schema<Patient> = new Schema({
     firstName: {
@@ -30,7 +31,7 @@ const PatientSchema: Schema<Patient> = new Schema({
     },
     phone: {
         type: String,
-      
+        unique: true,
     },
     password: {
         type: String,
@@ -41,25 +42,15 @@ const PatientSchema: Schema<Patient> = new Schema({
     },
     gender: {
         type: String,
-    
+        required: true,
     },
     dob: {
         type: Date,
-  
-    },
-    
-    isVerified:{
-        type: Boolean,
-        default: false
-    },
-    verifyToken:{
-        type: String,
-    },
-    verifyExpiry:{
-        type: Date,
-        default: Date.now() + 3600000 * 24 * 30 // 30 days expiry time in milliseconds
+        required: true,
     }
+   
 });
 
-// Check if the model exists in mongoose.models before defining it
-export const PatientModel = mongoose.models.Patient || mongoose.model<Patient>('Patient', PatientSchema);
+export const PatientModel = mongoose.model<Patient>('Patient', PatientSchema) ||
+mongoose.models.Patient as mongoose.Model<Patient>;
+ 
