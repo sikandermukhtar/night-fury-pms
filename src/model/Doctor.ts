@@ -15,6 +15,8 @@ export interface Doctor extends Document {
     timing: string;
     roomNumber: string;
     rank: string;
+    isVerified:boolean;
+    rejected:boolean;
 }
 
 // Define the Doctor schema
@@ -34,7 +36,7 @@ const DoctorSchema: Schema<Doctor> = new Schema({
     },
     phone: {
         type: String,
-        unique: true,
+      
     },
     password: {
         type: String,
@@ -45,33 +47,38 @@ const DoctorSchema: Schema<Doctor> = new Schema({
     },
     gender: {
         type: String,
-        required: true,
+        
     },
     dob: {
         type: Date,
-        required: true,
+       
     },
     enrollment: {
         type: Date,
-        required: true,
+       
     },
     specialization: {
         type: String,
-        required: true,
+      
     },
     timing: {
         type: String,
-        required: true,
+       
     },
-    roomNumber: {
-        type: String,
-        required: true,
-    },
+  
     rank: {
         type: String,
+    },
+    isVerified:{
+        type: Boolean,
+        default: false
+    },
+    rejected:{
+        type: Boolean,
+        default: false
     }
+
 });
 
 // Export the Doctor model
-export const DoctorModel = mongoose.model<Doctor>('Doctor', DoctorSchema) ||
-    mongoose.models.Doctor as mongoose.Model<Doctor>;
+export const DoctorModel = mongoose.models.Doctor || mongoose.model<Doctor>('Doctor', DoctorSchema);
